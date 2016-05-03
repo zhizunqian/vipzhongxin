@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=0.5">
+	<title>VIP中心</title>
+	<link rel="stylesheet" href="vipzhongxincss/vipzhongxin.css">
+	<script src="vipzhongxinjs/zepto.min.js"></script>
+	<script src="ZeroClipboard.js"></script>
+	<script src="ZeroClipboard.swf"></script>
+	<script src="vipzhongxinjs/vipzhongxin.js"></script>
+</head>
+<body>
+	<div class="top">
+		<a href=""></a>
+		<span>VIP中心</span>
+	</div>
+	<div class="xuanchuan"></div>
+	<div class="xinxibox">
+		<div class="yonghubox">
+			<div class="name">您好！m12345678912 </div>
+			<p class="novip">(您还不是VIP噢！)</p>
+			<div class="kaitongbox">
+				<button class="kaitong">开通</button>
+			</div>
+		</div>
+		<div class="tuiguangbox">
+			<span class="span">您的推广链接为：</span>
+			<input class="input" type="text" id="fe_text" value="www.wanggezhongtui.com/show.html?id=1099">
+		</div>
+		<div class="miaoshubox">
+			<p>分享至QQ群、微信朋友圈，可增加您的推广曝光度，凡通过您的链接注册成为会员的，直接返现到您的账号<span>推广余额500金币</span>，成为VIP后，您将享受本站<span>三级返佣制</span>躺着也能赚钱，一次付出终生有效。</p>
+			<div class="fuzhibtnbox"><button class="fuzhibtn" id="fuzhi" data-clipboard-target="fe_text">复制链接</button></div>
+		</div>
+	</div>
+	<div class="zhanjibox">
+		<img src="vipzhongxinimg/zhanji.png" alt="">
+		<span>我的推广战绩</span>
+		<p style="margin-top: 62px;">一级代理：0个</p>
+		<p>二级代理：0个</p>
+		<p>三级代理：0个</p>
+		<p class="shouji">您的推广元宝总收益为：0</p>
+		<p style="margin-bottom:20px" class="shouji">您的推广元宝余额为：0</p>
+		<div class="btnbox btn1">
+			<button>推广元宝提现</button>
+		</div>
+		<div class="btnbox btn2">
+			<button>排行榜</button>
+		</div>
+		<div class="btnbox btn3">
+			<button>推广记录</button>
+		</div>
+		<div class="btnbox btn4">
+			<button>推广三级返利说明</button>
+		</div>
+	</div>
+	<div class="huangjinbox">
+		<img src="vipzhongxinimg/vip.png" alt="">
+		<span>黄金VIP特权</span>
+		<p style="margin-top: 62px;">① 开通VIP后，您将享受三级推广返佣特权</p>
+		<p>② 平台会推送一些专属VIP的高质量、高价格任务</p>
+		<p>③ 提现大幅度减免手续费</p>
+		<p>④ 您发出的任务将享受VIP专属客服服务，更好的保障您的权益</p>
+		<p>⑤ 平台优惠政策提前通知VIP会员，提前享受优惠活动</p>
+	</div>
+
+	<script>
+	// 定义一个新的复制对象
+var clip = new ZeroClipboard( document.getElementById("fuzhi"), {
+  moviePath: "ZeroClipboard.swf"
+} );
+
+// 复制内容到剪贴板成功后的操作
+clip.on( 'complete', function(client, args) {
+   alert("复制成功，复制内容为："+ args.text);
+} );
+	</script>
+</body>
+</html>
