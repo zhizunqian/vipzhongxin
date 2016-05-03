@@ -6,8 +6,8 @@
 	<title>VIP中心</title>
 	<link rel="stylesheet" href="vipzhongxincss/vipzhongxin.css">
 	<script src="vipzhongxinjs/zepto.min.js"></script>
-	<script src="ZeroClipboard.js"></script>
-	<script src="ZeroClipboard.swf"></script>
+	<!-- // <script src="ZeroClipboard.js"></script> -->
+	<!-- // <script src="ZeroClipboard.swf"></script> -->
 	<script src="vipzhongxinjs/vipzhongxin.js"></script>
 </head>
 <body>
@@ -26,11 +26,11 @@
 		</div>
 		<div class="tuiguangbox">
 			<span class="span">您的推广链接为：</span>
-			<input class="input" type="text" id="fe_text" value="www.wanggezhongtui.com/show.html?id=1099">
+			<input class="input" id="input" type="text" value="www.wanggezhongtui.com/show.html?id=1099">
 		</div>
 		<div class="miaoshubox">
 			<p>分享至QQ群、微信朋友圈，可增加您的推广曝光度，凡通过您的链接注册成为会员的，直接返现到您的账号<span>推广余额500金币</span>，成为VIP后，您将享受本站<span>三级返佣制</span>躺着也能赚钱，一次付出终生有效。</p>
-			<div class="fuzhibtnbox"><button class="fuzhibtn" id="fuzhi" data-clipboard-target="fe_text">复制链接</button></div>
+			<div class="fuzhibtnbox"><button class="fuzhibtn" id="fuzhi">复制链接</button></div>
 		</div>
 	</div>
 	<div class="zhanjibox">
@@ -66,14 +66,34 @@
 
 	<script>
 	// 定义一个新的复制对象
-var clip = new ZeroClipboard( document.getElementById("fuzhi"), {
-  moviePath: "ZeroClipboard.swf"
-} );
+// var clip = new ZeroClipboard( document.getElementById("fuzhi"), {
+//   moviePath: "ZeroClipboard.swf"
+// } );
 
-// 复制内容到剪贴板成功后的操作
-clip.on( 'complete', function(client, args) {
-   alert("复制成功，复制内容为："+ args.text);
-} );
+// // 复制内容到剪贴板成功后的操作
+// clip.on( 'complete', function(client, args) {
+//    alert("复制成功，复制内容为："+ args.text);
+// } );
+
+
+
+
+function copyToClipBoard(){
+	// var clipBoardContent=window.location.href;
+	var clipBoardContent="4565";
+	if(navigator.userAgent.toLowerCase().indexOf('ie') > -1) {
+		clipboardData.setData('Text',clipBoardContent);
+		alert ("已经复制到您的剪贴板中\n\n您可以使用粘贴到浏览器中打开！");
+	} else {
+		prompt("请复制网址:",clipBoardContent); 
+	}
+}
+$("#fuzhi").click(function(){
+	// var a=$("#input").val();
+	// console.log(a);
+	copyToClipBoard()
+})
+
 	</script>
 </body>
 </html>
